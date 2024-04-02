@@ -1,3 +1,187 @@
+@font-face {
+   font-family: "C C Red Alert Inet";
+   src: url("./Assets/Fonts/c_c_red_alert_inet/C&C\ Red\ Alert\ [INET].ttf") format("truetype");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+   font-family: "C C Red Alert Inet", sans-serif;
+}
+
+body {
+   background: linear-gradient(#453585 10%, #ffffff 40%, #ffffff 100%, #453585 80%);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+/* NavBar styling starts here */
+li {
+   list-style: none;
+   cursor: pointer;
+   position: relative;
+}
+
+.icon {
+   cursor: pointer;
+}
+
+.navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem;
+   background-color: #1eb9c8;
+   margin-bottom: 20px;
+}
+
+.content {
+   margin-top: 120px;
+}
+
+.logo {
+   color: #453585;
+   font-size: 30px;
+   font-weight: bold;
+   margin-right: 150px;
+}
+
+.logo:hover {
+   color: #6551b5;
+}
+
+.searchDiv {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+.searchDiv input {
+   padding: 0.5rem;
+   font-size: 1rem;
+   border-top: 1px solid #453585;
+   border-left: 1px solid #453585;
+   border-bottom: 1px solid #453585;
+   border-radius: 4px;
+}
+
+.searchDiv button {
+   padding: 0.5rem 1rem;
+   font-size: 1rem;
+   color: #fff;
+   background-color: #61dae5;
+   border: 1px solid #453585;
+   border-radius: 4px;
+   cursor: pointer;
+   margin-left: 5px;
+}
+
+.searchDiv button:hover {
+   background-color: #6551b5;
+}
+
+.menu {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 100px;
+}
+
+.menu-item {
+   color: black;
+   font-size: 20px;
+   font-weight: bold;
+   margin-left: 1rem;
+}
+
+.menu-item:hover {
+   color: #6551b5;
+}
+
+/* Leaderboard styling starts here */
+.leaderboard {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+table {
+   border-collapse: collapse;
+   width: 75%;
+   margin: 0 auto;
+   background: #dcdcdc;
+}
+
+th,
+td {
+   text-align: left;
+   padding: 8px;
+   border: 1px solid #ffffff;
+}
+
+th {
+   background-color: #1eb9c8;
+   color: white;
+}
+
+.text-center {
+   text-align: center;
+   font-weight: bold;
+   font-size: 35px;
+   margin-bottom: 20px;
+}
+
+.leaderBoard_cell {
+   font-size: 12px;
+}
+
+.endPage {
+   margin-top: 70px;
+   border: none;
+   border-top: 2px solid #ccc;
+}
+
+/* Burn styling starts here */
+
+.burnDiv {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+}
+
+.questionMark {
+   display: flex;
+   justify-content: center; /* Center horizontally */
+   align-items: center; /* Center vertically */
+   width: 100%; /* Adjust width as needed */
+   height: 100%; /* Adjust height as needed */
+   background-image: url("./Assets/Images/question.png");
+   background-size: contain;
+   margin-left: 20rem;
+   margin-bottom: 20px;
+   z-index: -1;
+   background-repeat: no-repeat;
+}
+
+.text-styling {
+   font-size: 35px;
+   font-weight: bold;
+   color: black;
+   margin-top: 25px;
+   margin-bottom: 20px;
+}
+
+.centeredText {
+   display: flex;
+   justify-content: center;
+}
