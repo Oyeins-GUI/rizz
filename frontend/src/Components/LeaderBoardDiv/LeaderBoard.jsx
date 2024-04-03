@@ -147,6 +147,11 @@ const LeaderBoard = () => {
          walletAddress: "ST1PQHQKV0RJXZrY1DGX8MNSNeVE3VGZJSRTPGZhM",
          points: "50",
       },
+      {
+         id: 30,
+         walletAddress: "ST1PQHQKV0RJXZrY1DGX8MNSNeVE3VGZJSRTPGZhM",
+         points: "50",
+      },
    ]
 
    data.sort((a, b) => b.points - a.points)
