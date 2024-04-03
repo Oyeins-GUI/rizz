@@ -12,7 +12,7 @@
 }
 
 body {
-   background: linear-gradient(#453585 10%, #ffffff 40%, #ffffff 100%, #453585 80%);
+   background: linear-gradient(#453585 4%, #ffffff 25%, #ffffff 100%, #453585 80%);
    background-size: cover;
    background-repeat: no-repeat;
 }
@@ -40,7 +40,7 @@ li {
    align-items: center;
    padding: 1rem;
    background-color: #1eb9c8;
-   margin-bottom: 20px;
+   margin-bottom: 0;
 }
 
 .content {
@@ -113,6 +113,7 @@ li {
    justify-content: center;
    align-items: center;
    height: 100vh;
+   overflow-y: auto;
 }
 
 table {
@@ -120,6 +121,13 @@ table {
    width: 75%;
    margin: 0 auto;
    background: #dcdcdc;
+}
+
+.tableHeader {
+   position: sticky;
+   top: 78px;
+   background-color: #1eb9c8;
+   z-index: 100;
 }
 
 th,
@@ -138,7 +146,7 @@ th {
    text-align: center;
    font-weight: bold;
    font-size: 35px;
-   margin-bottom: 20px;
+   margin-bottom: 15px;
 }
 
 .leaderBoard_cell {
@@ -146,13 +154,12 @@ th {
 }
 
 .endPage {
-   margin-top: 70px;
+   margin-top: 25px;
    border: none;
    border-top: 2px solid #ccc;
 }
 
 /* Burn styling starts here */
-
 .burnDiv {
    position: relative;
    width: 100%;
@@ -161,15 +168,14 @@ th {
 
 .questionMark {
    display: flex;
-   justify-content: center; /* Center horizontally */
-   align-items: center; /* Center vertically */
-   width: 100%; /* Adjust width as needed */
-   height: 100%; /* Adjust height as needed */
-   background-image: url("./Assets/Images/question.png");
+   justify-content: center;
+   align-items: center;
+   width: 50%;
+   height: 50%;
    background-size: contain;
-   margin-left: 20rem;
-   margin-bottom: 20px;
-   z-index: -1;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 15rem;
    background-repeat: no-repeat;
 }
 
@@ -179,6 +185,7 @@ th {
    color: black;
    margin-top: 25px;
    margin-bottom: 20px;
+   text-align: center;
 }
 
 .centeredText {

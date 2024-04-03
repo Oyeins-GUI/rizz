@@ -149,15 +149,15 @@ const LeaderBoard = () => {
       },
    ]
 
+   data.sort((a, b) => b.points - a.points)
+
    return (
       <div className="leaderBoard">
          <div>
-            <h2 colSpan="3" className="text-center text-whiteColor">
-               Rizz Points
-            </h2>
+            <h2 className="text-center text-whiteColor">Rizz Points</h2>
          </div>
          <table>
-            <thead>
+            <thead className="tableHeader">
                <tr>
                   <th>S/N</th>
                   <th>Wallet Address</th>
