@@ -156,6 +156,10 @@ const LeaderBoard = () => {
 
    data.sort((a, b) => b.points - a.points)
 
+   data.forEach((item, index) => {
+      item.id = index + 1
+   })
+
    return (
       <div className="leaderBoard">
          <div>
