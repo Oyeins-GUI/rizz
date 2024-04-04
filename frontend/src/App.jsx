@@ -1,4 +1,4 @@
-import LeaderBoard from "./components/LeaderBoardDiv/LeaderBoard"
+import LeaderBoard from "./Components/LeaderBoardDiv/LeaderBoard"
 
 function App() {
    return (

@@ -14,7 +14,7 @@ const LeaderBoard = () => {
    return (
       <div className="leaderBoard">
          <div>
-            <h2 className="text-center text-whiteColor">Rizz Points</h2>
+            <h2 className="text-center text-blackColor">Rizz Points</h2>
          </div>
          <table>
             <thead className="tableHeader">
@@ -28,16 +28,18 @@ const LeaderBoard = () => {
             <tbody className="leaderBoard_cell p-3 text-sm">
                {isPending
                   ? "Loading..."
-                  : data.map((item, index) => (
-                       <tr key={index}>
-                          <td>{index + 1}</td>
-                          <td>{item.wallet}</td>
-                          <td>{item.balance}</td>
-                          <td>{calculatePoint(item.balance)}</td>
-                       </tr>
-                    ))}
-
-               {error && "An error has occurred"}
+                  : data
+                    ? data.map((item, index) => (
+                         <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{item.wallet}</td>
+                            <td>{item.balance}</td>
+                            <td>{calculatePoint(item.balance)}</td>
+                         </tr>
+                      ))
+                    : error
+                      ? "An error has occurred"
+                      : null}
             </tbody>
          </table>
       </div>
