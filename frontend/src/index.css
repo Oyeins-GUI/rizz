@@ -33,14 +33,12 @@ li {
    top: 0;
    left: 0;
    width: 100%;
-   z-index: 1000;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 1rem;
+   padding: 1rem 2rem;
    background-color: #1eb9c8;
-   margin-bottom: 0;
 }
 
 .content {
@@ -51,27 +49,31 @@ li {
    color: #453585;
    font-size: 30px;
    font-weight: bold;
-   margin-right: 150px;
 }
 
 .logo:hover {
    color: #6551b5;
 }
 
-.searchDiv {
+.searchDiv form {
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 100%;
+   gap: 5px;
 }
 
 .searchDiv input {
    padding: 0.5rem;
    font-size: 1rem;
-   border-top: 1px solid #453585;
-   border-left: 1px solid #453585;
-   border-bottom: 1px solid #453585;
+   border: transparent;
    border-radius: 4px;
+   outline: none;
+   transition: border 0.3s linear;
+}
+
+.searchDiv input:hover,
+.searchDiv input:focus {
+   border: 1px solid #453585;
 }
 
 .searchDiv button {
@@ -79,19 +81,20 @@ li {
    font-size: 1rem;
    color: #fff;
    background-color: #61dae5;
-   border: 1px solid #453585;
+   border: transparent;
    border-radius: 4px;
    cursor: pointer;
-   margin-left: 5px;
+   transition: all 0.3s linear;
 }
 
 .searchDiv button:hover {
    background-color: #6551b5;
+   border: 1px solid #453585;
 }
 
 .menu {
    display: flex;
-   justify-content: flex-end;
+   /* justify-content: flex-end; */
    align-items: center;
    gap: 100px;
 }
@@ -112,7 +115,7 @@ li {
    display: flex;
    justify-content: center;
    align-items: center;
-   height: 100vh;
+   min-height: 100vh;
    overflow-y: auto;
 }
 
@@ -150,13 +153,7 @@ th {
 }
 
 .leaderBoard_cell {
-   font-size: 12px;
-}
-
-.endPage {
-   margin-top: 25px;
-   border: none;
-   border-top: 2px solid #ccc;
+   font-size: 11px;
 }
 
 /* Burn styling starts here */
@@ -173,9 +170,10 @@ th {
    width: 50%;
    height: 50%;
    background-size: contain;
-   margin-left: auto;
+   margin: 15rem 0 auto;
+   /* margin-left: auto;
    margin-right: auto;
-   margin-top: 15rem;
+   margin-top: 15rem; */
    background-repeat: no-repeat;
 }
 
@@ -183,8 +181,9 @@ th {
    font-size: 35px;
    font-weight: bold;
    color: black;
-   margin-top: 25px;
-   margin-bottom: 20px;
+   margin: 25px 0 20px 0;
+   /* margin-top: 25px;
+   margin-bottom: 20px; */
    text-align: center;
 }
 

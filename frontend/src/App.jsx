@@ -1,14 +1,10 @@
-import Burn from "./Components/BurnDiv/Burn"
-import LeaderBoard from "./Components/LeaderBoardDiv/LeaderBoard"
-import NavBar from "./Components/NavBar/NavBar"
+import LeaderBoard from "./components/LeaderBoardDiv/LeaderBoard"
 
 function App() {
    return (
       <div>
-         <NavBar />
          <div className="content">
             <LeaderBoard />
-            <Burn />
          </div>
       </div>
    )

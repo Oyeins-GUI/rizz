@@ -1,163 +1,14 @@
-import React from "react"
+import { useQuery } from "@tanstack/react-query"
+import calculatePoint from "../../utils/calculatePoint"
 
 const LeaderBoard = () => {
-   const data = [
-      {
-         id: 1,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-         points: "100",
+   const { isPending, error, data } = useQuery({
+      queryKey: ["rizz-data"],
+      queryFn: async () => {
+         const res = await fetch("https://satscreener.com/api/getStx20sItem/rizz")
+         return await res.json()
       },
-      {
-         id: 2,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "95",
-      },
-      {
-         id: 3,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "80",
-      },
-      {
-         id: 4,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-         points: "100",
-      },
-      {
-         id: 5,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "90",
-      },
-      {
-         id: 6,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "91",
-      },
-      {
-         id: 7,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-         points: "82",
-      },
-      {
-         id: 8,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "83",
-      },
-      {
-         id: 9,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "88",
-      },
-      {
-         id: 10,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-         points: "60",
-      },
-      {
-         id: 11,
-         walletAddress: "ST1PQHQKV0RJXZFYmDGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "77",
-      },
-      {
-         id: 12,
-         walletAddress: "ST1PQHQKV0RJXZFYbDGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "79",
-      },
-      {
-         id: 13,
-         walletAddress: "ST1PQHQKV0RJXZFh1DGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "45",
-      },
-      {
-         id: 14,
-         walletAddress: "ST1PQHQKV0RJXZrY1DGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "50",
-      },
-      {
-         id: 15,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-         points: "60",
-      },
-      {
-         id: 16,
-         walletAddress: "ST1PQHQKV0RJXZFYmDGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "77",
-      },
-      {
-         id: 17,
-         walletAddress: "ST1PQHQKV0RJXZFYbDGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "79",
-      },
-      {
-         id: 18,
-         walletAddress: "ST1PQHQKV0RJXZFh1DGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "45",
-      },
-      {
-         id: 19,
-         walletAddress: "ST1PQHQKV0RJXZrY1DGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "50",
-      },
-      {
-         id: 20,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-         points: "60",
-      },
-      {
-         id: 21,
-         walletAddress: "ST1PQHQKV0RJXZFYmDGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "77",
-      },
-      {
-         id: 22,
-         walletAddress: "ST1PQHQKV0RJXZFYbDGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "79",
-      },
-      {
-         id: 23,
-         walletAddress: "ST1PQHQKV0RJXZFh1DGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "45",
-      },
-      {
-         id: 24,
-         walletAddress: "ST1PQHQKV0RJXZrY1DGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "50",
-      },
-      {
-         id: 25,
-         walletAddress: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-         points: "60",
-      },
-      {
-         id: 26,
-         walletAddress: "ST1PQHQKV0RJXZFYmDGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "77",
-      },
-      {
-         id: 27,
-         walletAddress: "ST1PQHQKV0RJXZFYbDGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "79",
-      },
-      {
-         id: 28,
-         walletAddress: "ST1PQHQKV0RJXZFh1DGX8MgSNYVE3VGZJSRTPGZmM",
-         points: "45",
-      },
-      {
-         id: 29,
-         walletAddress: "ST1PQHQKV0RJXZrY1DGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "50",
-      },
-      {
-         id: 30,
-         walletAddress: "ST1PQHQKV0RJXZrY1DGX8MNSNeVE3VGZJSRTPGZhM",
-         points: "50",
-      },
-   ]
-
-   data.sort((a, b) => b.points - a.points)
-
-   data.forEach((item, index) => {
-      item.id = index + 1
+      retry: 2,
    })
 
    return (
@@ -168,22 +19,27 @@ const LeaderBoard = () => {
          <table>
             <thead className="tableHeader">
                <tr>
-                  <th>S/N</th>
+                  <th>Rank</th>
                   <th>Wallet Address</th>
+                  <th>Minted Rizz</th>
                   <th>Points</th>
                </tr>
             </thead>
-            <tbody className="leaderBoard_cell">
-               {data.map((item) => (
-                  <tr key={item.id}>
-                     <td>{item.id}</td>
-                     <td>{item.walletAddress}</td>
-                     <td>{item.points}</td>
-                  </tr>
-               ))}
+            <tbody className="leaderBoard_cell p-3 text-sm">
+               {isPending
+                  ? "Loading..."
+                  : data.map((item, index) => (
+                       <tr key={index}>
+                          <td>{index + 1}</td>
+                          <td>{item.wallet}</td>
+                          <td>{item.balance}</td>
+                          <td>{calculatePoint(item.balance)}</td>
+                       </tr>
+                    ))}
+
+               {error && "An error has occurred"}
             </tbody>
          </table>
-         <hr className="endPage" />
       </div>
    )
 }
