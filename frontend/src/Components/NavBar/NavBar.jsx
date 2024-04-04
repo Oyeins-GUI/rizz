@@ -1,4 +1,4 @@
-import { FaQuestion } from "react-icons/fa"
+// import { FaQuestion } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 const NavBar = () => {
@@ -15,9 +15,7 @@ const NavBar = () => {
                <Link to="/">Points</Link>
             </li>
             <li className="menu-item">
-               <Link to="/burn">
-                  <FaQuestion />
-               </Link>
+               <Link to="/burn">?</Link>
             </li>
          </ul>
 

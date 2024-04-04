@@ -1,6 +1,6 @@
 @font-face {
    font-family: "C C Red Alert Inet";
-   src: url("./Assets/Fonts/c_c_red_alert_inet/C&C\ Red\ Alert\ [INET].ttf") format("truetype");
+   src: url("./Assets/Fonts/c_c_red_alert_inet/C&C Red Alert [LAN].ttf") format("truetype");
 }
 
 @tailwind base;
@@ -9,10 +9,11 @@
 
 :root {
    font-family: "C C Red Alert Inet", sans-serif;
+   src: url("./Assets/Fonts/c_c_red_alert_inet/C&C Red Alert [LAN].ttf") format("truetype");
 }
 
 body {
-   background: linear-gradient(#453585 4%, #ffffff 25%, #ffffff 100%, #453585 80%);
+   /* background: linear-gradient(#453585 4%, #ffffff 25%, #ffffff 100%, #453585 80%); */
    background-size: cover;
    background-repeat: no-repeat;
 }
@@ -39,6 +40,7 @@ li {
    align-items: center;
    padding: 1rem 2rem;
    background-color: #1eb9c8;
+   z-index: 1000;
 }
 
 .content {
@@ -170,10 +172,7 @@ th {
    width: 50%;
    height: 50%;
    background-size: contain;
-   margin: 15rem 0 auto;
-   /* margin-left: auto;
-   margin-right: auto;
-   margin-top: 15rem; */
+   margin: 15rem auto 0;
    background-repeat: no-repeat;
 }
 
@@ -182,8 +181,6 @@ th {
    font-weight: bold;
    color: black;
    margin: 25px 0 20px 0;
-   /* margin-top: 25px;
-   margin-bottom: 20px; */
    text-align: center;
 }
 
