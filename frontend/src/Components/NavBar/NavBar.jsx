@@ -18,13 +18,6 @@ const NavBar = () => {
                <Link to="/burn">?</Link>
             </li>
          </ul>
-
-         <div className="searchDiv">
-            <form action="">
-               <input type="text" placeholder="Enter STX wallet address" />
-               <button type="submit">Search</button>
-            </form>
-         </div>
       </nav>
    )
 }

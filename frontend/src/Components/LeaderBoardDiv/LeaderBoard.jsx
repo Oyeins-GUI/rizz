@@ -16,6 +16,14 @@ const LeaderBoard = () => {
          <div>
             <h2 className="text-center text-blackColor">Rizz Points</h2>
          </div>
+
+         <div className="searchDiv">
+            <form action="">
+               <input type="text" placeholder="Enter STX wallet address" />
+               <button type="submit">Search</button>
+            </form>
+         </div>
+
          <table>
             <thead className="tableHeader">
                <tr>
