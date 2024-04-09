@@ -3,8 +3,8 @@ import App from "./App.jsx"
 import "./index.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import Burn from "./Components/BurnDiv/Burn.jsx"
-import NavBar from "./Components/NavBar/NavBar.jsx"
+import Burn from "./components/BurnDiv/Burn.jsx"
+import NavBar from "./components/NavBar/NavBar.jsx"
 
 const queryClient = new QueryClient()
 
