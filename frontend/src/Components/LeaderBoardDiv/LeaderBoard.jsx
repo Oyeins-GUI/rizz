@@ -1,5 +1,5 @@
 import calculatePoint from "../../utils/calculatePoint"
-import { useRizzData } from "../../useRizzData"
+import { useRizzData } from "../../hooks/useRizzData"
 import { useState } from "react"
 
 const LeaderBoard = () => {
