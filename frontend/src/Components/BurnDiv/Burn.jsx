@@ -1,4 +1,3 @@
-// import { FaQuestion } from "react-icons/fa"
 import questionImg from "../../assets/images/question.png"
 
 const Burn = () => {
