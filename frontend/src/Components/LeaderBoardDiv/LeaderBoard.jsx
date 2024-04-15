@@ -1,15 +1,14 @@
-import { useQuery } from "@tanstack/react-query"
 import calculatePoint from "../../utils/calculatePoint"
+import { useRizzData } from "../../hooks/useRizzData"
+import { useState } from "react"
 
 const LeaderBoard = () => {
-   const { isPending, error, data } = useQuery({
-      queryKey: ["rizz-data"],
-      queryFn: async () => {
-         const res = await fetch("https://satscreener.com/api/getStx20sItem/rizz")
-         return await res.json()
-      },
-      retry: 2,
-   })
+   const { isPending, error, data } = useRizzData()
+   const [walletAddress, setWalletAdress] = useState("")
+
+   const handleSearch = (e) => {
+      e.preventDefault()
+   }
 
    return (
       <div className="leaderBoard">
@@ -18,8 +17,14 @@ const LeaderBoard = () => {
          </div>
 
          <div className="searchDiv">
-            <form action="">
-               <input type="text" placeholder="Enter STX wallet address" />
+            <form onSubmit={handleSearch}>
+               <input
+                  type="text"
+                  name="address"
+                  value={walletAddress}
+                  onChange={(e) => setWalletAdress(e.target.value)}
+                  placeholder="Enter STX wallet address"
+               />
                <button type="submit">Search</button>
             </form>
          </div>
@@ -34,20 +39,26 @@ const LeaderBoard = () => {
                </tr>
             </thead>
             <tbody className="leaderBoard_cell p-3 text-sm">
-               {isPending
-                  ? "Loading..."
-                  : data
-                    ? data.map((item, index) => (
-                         <tr key={index}>
-                            <td>{index + 1}</td>
-                            <td>{item.wallet}</td>
-                            <td>{item.balance}</td>
-                            <td>{calculatePoint(item.balance)}</td>
-                         </tr>
-                      ))
-                    : error
-                      ? "An error has occurred"
-                      : null}
+               {isPending ? (
+                  <tr>Loading...</tr>
+               ) : (
+                  data
+                     ?.filter((item) => {
+                        return walletAddress.toLowerCase() === ""
+                           ? item
+                           : item.wallet.toLowerCase().includes(walletAddress.toLowerCase())
+                     })
+                     .map((item, index) => (
+                        <tr key={index}>
+                           <td>{index + 1}</td>
+                           <td>{item.wallet}</td>
+                           <td>{item.balance}</td>
+                           <td>{calculatePoint(item.balance)}</td>
+                        </tr>
+                     ))
+               )}
+
+               {error ? <tr>{error}</tr> : null}
             </tbody>
          </table>
       </div>
