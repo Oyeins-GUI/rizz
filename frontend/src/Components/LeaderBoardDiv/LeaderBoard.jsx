@@ -1,10 +1,12 @@
 import calculatePoint from "../../utils/calculatePoint"
 import { useRizzData } from "../../hooks/useRizzData"
 import { useState } from "react"
+import useDebounce from "../../hooks/useDebounce"
 
 const LeaderBoard = () => {
    const { isPending, error, data } = useRizzData()
    const [walletAddress, setWalletAdress] = useState("")
+   const debouncedAddress = useDebounce(walletAddress, 500)
 
    const handleSearch = (e) => {
       e.preventDefault()
@@ -44,9 +46,9 @@ const LeaderBoard = () => {
                ) : (
                   data
                      ?.filter((item) => {
-                        return walletAddress.toLowerCase() === ""
+                        return debouncedAddress.toLowerCase() === ""
                            ? item
-                           : item.wallet.toLowerCase().includes(walletAddress.toLowerCase())
+                           : item.wallet.toLowerCase().includes(debouncedAddress.toLowerCase())
                      })
                      .map((item, index) => (
                         <tr key={index}>
