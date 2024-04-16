@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client"
 import App from "./App.jsx"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import Burn from "./components/BurnDiv/Burn.jsx"
-import NavBar from "./components/NavBar/NavBar.jsx"
+import Burn from "./components/BurnDiv/index.jsx"
+import NavBar from "./components/NavBar/index.jsx"
 import { RizzDataProvider } from "./rizzDataContext.jsx"
 
 const queryClient = new QueryClient()
