@@ -1,10 +1,17 @@
 import calculatePoint from "../../utils/calculatePoint"
-import { useRizzData } from "../../hooks/useRizzData"
+import { useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import useDebounce from "../../hooks/useDebounce"
 
 const LeaderBoard = () => {
-   const { isPending, error, data } = useRizzData()
+   const { isPending, error, data } = useQuery({
+      queryKey: ["rizz-data"],
+      queryFn: async () => {
+         const res = await fetch("https://satscreener.com/api/getStx20sItem/rizz")
+         return await res.json()
+      },
+      retry: 2,
+   })
    const [walletAddress, setWalletAdress] = useState("")
    const debouncedAddress = useDebounce(walletAddress, 500)
 
@@ -60,7 +67,7 @@ const LeaderBoard = () => {
                      ))
                )}
 
-               {error ? <tr>{error}</tr> : null}
+               {error ? <tr>An error occured</tr> : null}
             </tbody>
          </table>
       </div>
