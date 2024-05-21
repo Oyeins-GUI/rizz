@@ -23,7 +23,10 @@ const router = createBrowserRouter([
       element: (
          <>
             <NavBar />
-            <Burn />
+            <div>
+               <h1>My Retro Music Player</h1>
+               <Burn />
+            </div>
          </>
       ),
    },
