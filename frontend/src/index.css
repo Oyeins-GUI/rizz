@@ -174,7 +174,7 @@ th {
 .burnDiv {
    background-color: antiquewhite;
    width: 100%;
-   height: 100vh;
+   height: calc(100vh - 77px);
    overflow: hidden;
 }
 

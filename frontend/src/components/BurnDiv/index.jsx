@@ -17,9 +17,9 @@
 
 // export default Burn
 
-import React, { useState } from "react"
-import music from "../../Assets/music/music.mp3"
-import image from "../../Assets/Images/banner.jpg"
+import { useState } from "react"
+import music from "../../assets/music/music.mp3"
+import image from "../../assets/images/banner.jpg"
 
 const Burn = () => {
    const [isPlaying, setIsPlaying] = useState(false)
