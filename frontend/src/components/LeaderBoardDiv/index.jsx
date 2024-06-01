@@ -7,7 +7,7 @@ const LeaderBoard = () => {
    const { isPending, error, data } = useQuery({
       queryKey: ["rizz-data"],
       queryFn: async () => {
-         const res = await fetch("https://satscreener.com/api/getStx20sItem/rizz")
+         const res = await fetch("https://rizz-backend-4v2n.onrender.com/api")
          return await res.json()
       },
       retry: 2,
