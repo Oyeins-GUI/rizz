@@ -19,7 +19,7 @@
 
 import { useState } from "react"
 import music from "../../Assets/music/music.mp3"
-import image from "../../Assets/images/banner.jpg"
+import image from "../../Assets/Images/banner.jpg"
 
 const Burn = () => {
    const [isPlaying, setIsPlaying] = useState(false)
